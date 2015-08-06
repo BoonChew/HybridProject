@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Hybrid</title>
+        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" name="viewport">
+    	<!--
+    		<link rel="shortcut icon" href="images/favicon.png">
+    		<link rel="apple-touch-icon" href="images/apple-touch-icon.png"> 
+    	-->
+        <link href="worklight/worklight.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
+        <link href="ionic/css/ionic.css" rel="stylesheet">
+        <script>
+		// Define WL namespace.
+		var WL = WL ? WL : {};
+		/**
+		 * WLClient configuration variables.
+		 * Values are injected by the deployer that packs the gadget.
+		 */
+		 WL.StaticAppProps = {
+   "APP_DISPLAY_NAME": "Hybrid",
+   "APP_ID": "Hybrid",
+   "APP_SERVICES_URL": "\/apps\/services\/",
+   "APP_VERSION": "1.0",
+   "ENVIRONMENT": "android",
+   "LOGIN_DISPLAY_TYPE": "embedded",
+   "WORKLIGHT_NATIVE_VERSION": "700999277",
+   "WORKLIGHT_PLATFORM_VERSION": "7.0.0.0",
+   "WORKLIGHT_ROOT_URL": "\/apps\/services\/api\/Hybrid\/android\/"
+};
+</script>
+		<script src="worklight/cordova.js"></script>
+		<script src="worklight/wljq.js"></script>
+		<script src="worklight/worklight.js"></script>
+		<script src="worklight/checksum.js"></script>
+		<script>window.$ = window.jQuery = WLJQ;</script>
+   		<script src="ionic/js/ionic.bundle.js"></script>
+   		<script src="js/initOptions.js"></script>
+   		<script src="js/main.js"></script>
+   		<script src="js/messages.js"></script>
+		<script src="app/app-main.js"></script>
+    </head>
+    <body ng-app="app-main" style="display: none;">
+        <ion-side-menus>
+            <ion-side-menu-content>
+		    <!-- Ionic places our views here-->
+		    <!-- Configure the global navigation/title bar -->
+                <ion-nav-bar class="bar-dark">
+		      <!-- Default buttons -->
+                    <ion-nav-buttons side="primary">
+		        <!-- "Hamburger" menu -->
+                        <button class="button button-icon icon ion-navicon" menu-toggle="left"></button>
+                    </ion-nav-buttons>
+		      <!-- Automatic back button -->
+                    <ion-nav-back-button></ion-nav-back-button>
+                </ion-nav-bar>
+                <ion-nav-view></ion-nav-view>
+            </ion-side-menu-content>
+            <ion-side-menu side="left">
+		    <!-- Define our left-hand-side menu -->
+                <header class="bar bar-header bar-dark">
+                    <h1 class="title">Amazing Menu!</h1>
+                </header>
+                <ion-content class="has-header">
+                    <ion-list>
+                        <ion-item class="item-icon-left" href="#/home" menu-close="" nav-clear="">
+                            <i class="icon ion-ios7-home"></i> Home
+		        </ion-item>
+                        <ion-item class="item-divider">
+		          Amazing Things
+		        </ion-item>
+                        <ion-item class="item-icon-left" href="#/planets" menu-close="" nav-clear="">
+                            <i class="icon ion-planet"></i> Planets
+		        </ion-item>
+                        <ion-item class="item-icon-left" href="#/blackholes" menu-close="" nav-clear="">
+                            <i class="icon ion-funnel"></i> Black Holes
+		        </ion-item>
+                    </ion-list>
+                </ion-content>
+            </ion-side-menu>
+        </ion-side-menus>
+    </body>
+</html>
